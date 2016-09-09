@@ -237,7 +237,7 @@ export default connect(
         const current_account = state.user.get('current')
         const cashout_time = post.get('cashout_time')
         const pending_payout       = parsePayoutAmount(post.get('pending_payout_value'))
-        const promoted             = parsePayoutAmount(post.get('promoted'))
+        const promoted             = parsePayoutAmount(post.get('promoted', 0))
         const total_author_payout  = parsePayoutAmount(post.get('total_payout_value'))
         const total_curator_payout = parsePayoutAmount(post.get('curator_payout_value'))
         const username = current_account ? current_account.get('username') : null;
