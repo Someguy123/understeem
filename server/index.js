@@ -13,14 +13,14 @@ require('module').Module._initPaths();
 
 import config from '../config';
 global.$STM_Config = {
-    fb_app: config.grant.facebook.key,
+    // fb_app: config.grant.facebook.key,
     ws_connection_client: config.ws_connection_client,
     ws_connection_server: config.ws_connection_server,
     img_proxy_prefix: config.img_proxy_prefix,
     ipfs_prefix: config.ipfs_prefix,
     disable_signups: config.disable_signups,
     read_only_mode: config.read_only_mode,
-    registrar_fee: config.registrar.fee
+    // registrar_fee: config.registrar.fee
 };
 
 const WebpackIsomorphicTools = require('webpack-isomorphic-tools');

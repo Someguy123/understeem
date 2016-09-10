@@ -7,10 +7,10 @@ import prod_logger from './prod_logger';
 import favicon from 'koa-favicon';
 import staticCache from 'koa-static-cache';
 import useRedirects from './redirects';
-import useOauthLogin from './api/oauth';
-import useGeneralApi from './api/general';
-import useAccountRecoveryApi from './api/account_recovery';
-import useEnterAndConfirmEmailPages from './server_pages/enter_confirm_email';
+// import useOauthLogin from './api/oauth';
+// import useGeneralApi from './api/general';
+// import useAccountRecoveryApi from './api/account_recovery';
+// import useEnterAndConfirmEmailPages from './server_pages/enter_confirm_email';
 import isBot from 'koa-isbot';
 import session from 'koa-session';
 import csrf from 'koa-csrf';
@@ -78,15 +78,15 @@ app.use(mount('/robots.txt', function* () {
 }));
 
 useRedirects(app);
-useEnterAndConfirmEmailPages(app);
+// useEnterAndConfirmEmailPages(app);
 
 if (env === 'production') {
     app.use(helmet.contentSecurityPolicy(config.helmet));
 }
 
-useAccountRecoveryApi(app);
-useOauthLogin(app);
-useGeneralApi(app);
+// useAccountRecoveryApi(app);
+// useOauthLogin(app);
+// useGeneralApi(app);
 
 app.use(favicon(path.join(__dirname, '../app/assets/images/favicons/favicon.ico')));
 app.use(isBot());

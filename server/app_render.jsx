@@ -2,7 +2,6 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import ServerHTML from './server-html';
 import universalRender from '../shared/UniversalRender';
-import models from 'db/models';
 
 const DB_RECONNECT_TIMEOUT = process.env.NODE_ENV === 'development' ? 1000 * 60 * 60 : 1000 * 60 * 10;
 
@@ -21,12 +20,12 @@ async function appRender(ctx) {
             let user = null;
             if (appRender.dbStatus.ok || (new Date() - appRender.dbStatus.lastAttempt) > DB_RECONNECT_TIMEOUT) {
                 try {
-                    user = await models.User.findOne({
-                        attributes: ['name', 'email', 'picture_small'],
-                        where: {id: user_id},
-                        include: [{model: models.Account, attributes: ['name']}],
-                        logging: false
-                    });
+                    // user = await models.User.findOne({
+                    //     attributes: ['name', 'email', 'picture_small'],
+                    //     where: {id: user_id},
+                    //     include: [{model: models.Account, attributes: ['name']}],
+                    //     logging: false
+                    // });
                     appRender.dbStatus = {ok: true};
                 } catch (e) {
                     appRender.dbStatus = {ok: false, lastAttempt: new Date()};
@@ -36,29 +35,29 @@ async function appRender(ctx) {
             } else {
                 offchain.serverBusy = true;
             }
-            if (user) {
-                let account = null;
-                if (user.Accounts && user.Accounts.length > 0) {
-                    account = user.Accounts[user.Accounts.length - 1].name;
-                }
-                offchain.user = {
-                    id: user_id,
-                    name: user.name,
-                    email: user.email,
-                    picture: user.picture_small,
-                    account
-                }
-            }
+            // if (user) {
+            //     let account = null;
+            //     if (user.Accounts && user.Accounts.length > 0) {
+            //         account = user.Accounts[user.Accounts.length - 1].name;
+            //     }
+            //     offchain.user = {
+            //         id: user_id,
+            //         name: user.name,
+            //         email: user.email,
+            //         picture: user.picture_small,
+            //         account
+            //     }
+            // }
         }
-        if (ctx.session.arec) {
-            const account_recovery_record = await models.AccountRecoveryRequest.findOne({
-                attributes: ['id', 'account_name', 'status', 'provider'],
-                where: {id: ctx.session.arec, status: 'confirmed'}
-            });
-            if (account_recovery_record) {
-                offchain.recover_account = account_recovery_record.account_name;
-            }
-        }
+        // if (ctx.session.arec) {
+        //     const account_recovery_record = await models.AccountRecoveryRequest.findOne({
+        //         attributes: ['id', 'account_name', 'status', 'provider'],
+        //         where: {id: ctx.session.arec, status: 'confirmed'}
+        //     });
+        //     if (account_recovery_record) {
+        //         offchain.recover_account = account_recovery_record.account_name;
+        //     }
+        // }
         const { body, title, statusCode, meta } = await universalRender({location: ctx.request.url, store, offchain});
 
         // Assets name are found in `webpack-stats` file

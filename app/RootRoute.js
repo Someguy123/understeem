@@ -50,13 +50,13 @@ export default {
             //require.ensure([], (require) => {
             cb(null, [require('app/components/pages/RecoverAccountStep1')]);
             //});
-        } else if (route.page === 'RecoverAccountStep2') {
+        // } else if (route.page === 'RecoverAccountStep2') {
             //require.ensure([], (require) => {
-            cb(null, [require('app/components/pages/RecoverAccountStep2')]);
+            // cb(null, [require('app/components/pages/RecoverAccountStep2')]);
             //});
-        } else if (route.page === 'WaitingList') {
+        // } else if (route.page === 'WaitingList') {
             //require.ensure([], (require) => {
-            cb(null, [require('app/components/pages/WaitingList')]);
+            // cb(null, [require('app/components/pages/WaitingList')]);
             //});
         } else if (route.page === 'Witnesses') {
             //require.ensure([], (require) => {
