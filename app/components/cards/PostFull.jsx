@@ -152,7 +152,7 @@ export default class PostFull extends React.Component {
 
         const content_body = content.body;
         const {category, title, body} = content;
-        if (process.env.BROWSER && title) document.title = title + ' — Steemit';
+        if (process.env.BROWSER && title) document.title = title + ' — UnderSteem';
 
         const replyParams = {author, permlink, parent_author, parent_permlink, category, title, body}
 
@@ -169,7 +169,7 @@ export default class PostFull extends React.Component {
 
         this.share_params = {
             url: 'https://steemit.com' + link,
-            title: title + ' — Steemit',
+            title: title + ' — UnderSteem',
             desc: p.desc
         };
 

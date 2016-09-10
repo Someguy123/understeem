@@ -132,7 +132,7 @@ class App extends React.Component {
                     <div className="welcomeBanner">
                         <CloseButton onClick={() => this.setState({showBanner: false})} />
                         <div className="text-center">
-                            <h2>Welcome to the Blockchain!</h2>
+                            <h2>Welcome to the Blockchain (UNCENSORED EDITION)!</h2>
                             <h4>Your voice is worth something</h4>
                             <br />
                             <a className="button" href="/create_account" onClick={showSignUp}> <b>SIGN UP</b> </a>
@@ -140,9 +140,6 @@ class App extends React.Component {
                             <a className="button hollow" href="https://steem.io" target="_blank"> <b>LEARN MORE</b> </a>
                             <br />
                             <br />
-                            <div className="tag3">
-                                <b>Get {signup_bonus} of Steem Power when you sign up today.</b>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -163,7 +160,6 @@ class App extends React.Component {
                     <li><a href="/change_password" onClick={this.navigate}>Change Account Password</a></li>
                     <li><a href="https://steemit.chat/home" target="_blank">Steemit Chat&nbsp;<Icon name="extlink"/></a></li>
                     <li className="last"><a onClick={this.navigate} href="/~witnesses">Witnesses</a></li>
-                    <li className="last"><a onClick={this.navigate} href="/@steemitjobs">Careers</a></li>
                 </ul>
                 <ul className="vertical menu">
                     <li><a href="/privacy.html" onClick={this.navigate} rel="nofollow">Privacy Policy</a></li>

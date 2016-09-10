@@ -8,7 +8,7 @@ import Icon from 'app/components/elements/Icon'
 import {key_utils} from 'shared/ecc'
 
 const {bool} = React.PropTypes
-export const steemitCannotRecoverPasswords = 'Steemit cannot recover passwords.  Keep this page in a secure location, such as a fireproof safe or safety deposit box.'
+export const steemitCannotRecoverPasswords = 'UnderSteem cannot recover passwords.  Keep this page in a secure location, such as a fireproof safe or safety deposit box.'
 
 class SuggestPassword extends React.Component {
     static propTypes = {
@@ -34,7 +34,7 @@ class SuggestPassword extends React.Component {
                 <Icon name="steem" size="2x" /> Steemit
                 <hr />
                 <div>
-                    {print ? <h5>Steemit Password Backup</h5> : <h5>Steemit Password Backup (required)</h5>}
+                    {print ? <h5>UnderSteem Password Backup</h5> : <h5>UnderSteem Password Backup (required)</h5>}
                     {steemitCannotRecoverPasswords}
                 </div>
                 <br />
