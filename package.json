@@ -49,6 +49,7 @@
     "foundation-sites": "6.2.1",
     "git-rev-sync": "^1.6.0",
     "grant-koa": "^3.6.0",
+    "helmet-csp": "helmetjs/csp#2.0.0",
     "highcharts": "^4.2.5",
     "history": "^2.0.0-rc2",
     "humanize-number": "0.0.2",

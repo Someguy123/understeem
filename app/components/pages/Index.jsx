@@ -47,7 +47,7 @@ export default class Index extends React.Component {
                     <SvgImage name="steemit" width="480px" height="240px" />
                 </div>
                 <h1 className="center text-center">
-                    Steemit is a social media platform where <strong>everyone</strong>&nbsp;gets <strong>paid</strong> for creating and curating content.
+                    UnderSteem is a social media platform where <strong>everyone</strong>&nbsp;gets <strong>paid</strong> for creating and curating content.
                 </h1>
                 <br />
                 <br />

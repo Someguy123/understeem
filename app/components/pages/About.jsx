@@ -6,9 +6,9 @@ class About extends React.Component {
             <div className="row">
                 <div className="column">
                     <div className="float-right"><a href="#" onClick={e => {e.preventDefault(); alert(process.env.VERSION)}}>Version</a></div>
-                    <h2>About Steemit</h2>
+                    <h2>About UnderSteem</h2>
                     <p>
-                        Steemit is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Steem, that supports real value for digital rewards through market price discovery and liquidity.
+                        UnderSteem is a social media platform where everyone gets paid for creating and curating content. It leverages a robust digital points system, called Steem, that supports real value for digital rewards through market price discovery and liquidity.
                         <a href="https://steem.io/">Learn more at steem.io</a>.
                     </p>
                     <h2>Resources</h2>

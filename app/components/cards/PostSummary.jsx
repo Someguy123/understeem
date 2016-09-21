@@ -79,11 +79,11 @@ export default class PostSummary extends React.Component {
         let content_body = <div className="PostSummary__body entry-content"><Link to={title_link_url}>{desc}</Link></div>;
         let content_title = <h1 className="entry-title"><Link to={title_link_url}>{title_text}</Link></h1>;
 
-        if( !(currentCategory && currentCategory.match( /nsfw/ )) ) {
-           if (currentCategory !== '-' && currentCategory !== p.category && p.category.match(/nsfw/) ) {
-               return null;
-           }
-        }
+        // if( !(currentCategory && currentCategory.match( /nsfw/ )) ) {
+        //    if (currentCategory !== '-' && currentCategory !== p.category && p.category.match(/nsfw/) ) {
+        //        return null;
+        //    }
+        // }
 
         let thumb = null;
         if(pictures && p.image_link) {

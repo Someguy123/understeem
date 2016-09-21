@@ -42,6 +42,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, showSignUp, userpi
         return (
             <ul className={mcn}>
                 <li className={lcn}><a href="/static/search.html" title="Search">{vertical ? <span>Search</span> : <Icon name="search" />}</a></li>
+                <li className={lcn}><a href="/static/legal.html" onClick={showSignUp}>Legal/Contact</a></li>                
                 {submit_story}
                 <LinkWithDropdown
                     closeOnClickOutside
@@ -67,6 +68,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, showSignUp, userpi
         return (
             <ul className={mcn}>
                 {!vertical && <li><a href="/static/search.html" title="Search"><Icon name="search" /></a></li>}
+                <li className={lcn}><a href="/static/legal.html" onClick={showSignUp}>Legal/Contact</a></li>                
                 <li className={lcn}><LoadingIndicator type="circle" inline /></li>
                 {toggleOffCanvasMenu && <li className="toggle-menu"><a href="#" onClick={toggleOffCanvasMenu}>
                     <span className="hamburger" />
@@ -78,6 +80,7 @@ function TopRightMenu({username, showLogin, logout, loggedIn, showSignUp, userpi
         <ul className={mcn}>
             {!vertical && <li><a href="/static/search.html" title="Search"><Icon name="search" /></a></li>}
             <li className={lcn}><a href="/create_account" onClick={showSignUp}>Sign Up</a></li>
+            <li className={lcn}><a href="/static/legal.html" onClick={showSignUp}>Legal/Contact</a></li>
             <li className={lcn}><a href="/login.html" onClick={showLogin}>Login</a></li>
             {submit_story}
             {toggleOffCanvasMenu && <li className="toggle-menu"><a href="#" onClick={toggleOffCanvasMenu}>
