@@ -10,7 +10,7 @@
   "scripts": {
     "build": "NODE_ENV=production babel-node ./node_modules/.bin/webpack --stats --config ./webpack/prod.config.js",
     "mocha": "NODE_ENV=test mocha ./mocha.setup.js",
-    "test": "npm run mocha -- app/**/*.test.js app/**/**/*.test.js server/*.test.js shared/**/*.test.js shared/*/test/*",
+    "test": "npm run mocha -- app/**/*.test.js shared/**/*.test.js shared/*/test/*",
     "test:watch:all": "npm test -- --watch --watch-extensions jsx",
     "test:watch": "npm run mocha -- --watch --watch-extensions jsx",
     "prod": "NODE_ENV=production ./node_modules/babel-cli/bin/babel-node.js server/index.js",
@@ -49,6 +49,7 @@
     "foundation-sites": "6.2.1",
     "git-rev-sync": "^1.6.0",
     "grant-koa": "^3.6.0",
+    "helmet-csp": "helmetjs/csp#2.0.0",
     "highcharts": "^4.2.5",
     "history": "^2.0.0-rc2",
     "humanize-number": "0.0.2",

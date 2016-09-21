@@ -61,7 +61,7 @@ export default class GeneratedPasswordInput extends React.Component {
                 </div>
                 <div className="GeneratedPasswordInput__checkboxes">
                     <label><input type="checkbox" name="box1" onChange={this.confirmCheckChange} checked={confirmCheckboxes.box1} />
-                        I understand that Steemit cannot recover lost passwords.
+                        I understand that UnderSteem cannot recover lost passwords.
                     </label>
                     <label><input type="checkbox" name="box2" onChange={this.confirmCheckChange} checked={confirmCheckboxes.box2} />
                         I have securely saved my generated password.

@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import user from 'app/redux/User';
 import transaction from 'app/redux/Transaction'
 import Voting from 'app/components/elements/Voting';
+import Reblog from 'app/components/elements/Reblog';
 import Tooltip from 'app/components/elements/Tooltip';
 import MarkdownViewer from 'app/components/cards/MarkdownViewer';
 import ReplyEditor from 'app/components/elements/ReplyEditor';
@@ -125,7 +126,7 @@ export default class PostFull extends React.Component {
         const winTop = (screen.height / 2) - (winWidth / 2);
         const winLeft = (screen.width / 2) - (winHeight / 2);
         const s = this.share_params;
-        const q = 'title=' + encodeURIComponent(s.title) + '&url=' + encodeURIComponent(s.url) + '&source=Steemit&mini=true';
+        const q = 'title=' + encodeURIComponent(s.title) + '&url=' + encodeURIComponent(s.url) + '&source=UnderSteem&mini=true';
         window.open('https://www.linkedin.com/shareArticle?' + q, 'Share', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
     }
 
@@ -152,7 +153,7 @@ export default class PostFull extends React.Component {
 
         const content_body = content.body;
         const {category, title, body} = content;
-        if (process.env.BROWSER && title) document.title = title + ' — Steemit';
+        if (process.env.BROWSER && title) document.title = title + ' — UnderSteem';
 
         const replyParams = {author, permlink, parent_author, parent_permlink, category, title, body}
 
@@ -169,7 +170,7 @@ export default class PostFull extends React.Component {
 
         this.share_params = {
             url: 'https://steemit.com' + link,
-            title: title + ' — Steemit',
+            title: title + ' — UnderSteem',
             desc: p.desc
         };
 
@@ -198,7 +199,7 @@ export default class PostFull extends React.Component {
         const pending_payout = parsePayoutAmount(content.pending_payout_value);
         const total_payout = parsePayoutAmount(content.total_payout_value);
         const high_quality_post = pending_payout + total_payout > 10.0;
-        const showEditOption = username === author && total_payout === 0
+        const showEditOption = username === author && post_content.get('mode') != 'archived'
         const authorRepLog10 = repLog10(content.author_reputation)
 
         let post_header = <h1 className="entry-title">{content.title}</h1>
@@ -228,6 +229,7 @@ export default class PostFull extends React.Component {
             </div>
         }
 
+        const archived    = post_content.get('mode') === 'archived'
         const firstPayout = post_content.get('mode') === "first_payout"
         const rootComment = post_content.get('depth') == 0
 
@@ -255,6 +257,7 @@ export default class PostFull extends React.Component {
                         <Voting post={post} />
                     </div>
                     <div className="column shrink">
+                            {!archived && <Reblog author={author} permlink={permlink} />}
                             <span className="PostFull__responses">
                                 <Link to={link} title={pluralize('Responses', content.children, true)}>
                                     <Icon name="chatboxes" className="space-right" />{content.children}

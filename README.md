@@ -1,5 +1,8 @@
-Steemit
+UnderSteem
 ========
+
+UnderSteem is a fork of Steemit. Unlike Steemit, we will do our best to avoid censorship within the 
+website, including NSFW content visible by default.
 
 ## Installation
 
@@ -62,7 +65,9 @@ Run `sequelize db:migrate` in `db/` directory.
 npm start
 ```
 
-You now have your development front end running at localhost:3002, connected to the main public steem blockchain. You don't need to run ```steemd``` locally, by default you will connect to ```ws://node.steem.ws```.  Use your regular account name and credentials to login -- there is no separate dev login.
+You now have your development front end running at localhost:3002, connected to the main public steem blockchain. You don't need 
+to run ```steemd``` locally, by default you will connect to ```ws://node.steem.ws```.  Use your regular account name and 
+credentials to login -- there is no separate dev login.
 
 #### Style Guides
 

@@ -47,7 +47,8 @@ class CreateAccount extends React.Component {
         if (!process.env.BROWSER) { // don't render this page on the server
             return <div className="row">
                 <div className="column">
-                    Loading..
+                    Loading.. <br/>
+                    <noscript>Dear TOR user: Please whitelist our site in NoScript, otherwise you cannot register or login!</noscript>
                 </div>
             </div>;
         }
