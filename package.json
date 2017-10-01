@@ -56,7 +56,7 @@
     "imports-loader": "^0.6.5",
     "iso": "^5.1.0",
     "json-loader": "^0.5.4",
-    "koa": "^1.1.2",
+    "koa": "^2.2.0",
     "koa-body": "^1.4.0",
     "koa-compressor": "^1.0.3",
     "koa-conditional-get": "^1.0.3",
