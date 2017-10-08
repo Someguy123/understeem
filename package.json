@@ -115,7 +115,7 @@
     "svgo-loader": "^1.1.0",
     "uncontrollable": "^3.2.1",
     "underscore.string": "^3.2.3",
-    "url-loader": "^0.5.7",
+    "url-loader": "^0.6.0",
     "webpack": "^1.13.2",
     "webpack-isomorphic-tools": "^2.2.31",
     "websocket": "^1.0.22",
