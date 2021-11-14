@@ -116,7 +116,7 @@
     "uncontrollable": "^3.2.1",
     "underscore.string": "^3.2.3",
     "url-loader": "^0.5.7",
-    "webpack": "^1.13.2",
+    "webpack": "^3.0.0",
     "webpack-isomorphic-tools": "^2.2.31",
     "websocket": "^1.0.22",
     "whatwg-fetch": "^0.11.1",
